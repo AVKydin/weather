@@ -50,34 +50,37 @@ function App() {
                 )}
             </div>
         </div>
-        {data.name !== "undefined" && (
+        {data.name !== undefined && (
             <div className="footer">
                 <div className="feels">
+                    <p>Відчувається як:</p>
                     {data.main && (
                         <p className="bold">
                             {`${data.main.feels_like.toFixed()} `}
                             °C
                         </p>
                     ) }
-                    <p>Відчувається як</p>
+
                 </div>
                 <div className="humidity">
+                    <p>Вологість:</p>
                     {data.main && (
                         <p className="bold">
                             {`${data.main.humidity} `}
                             %
                         </p>
                     )}
-                    <p>Вологість</p>
+
                 </div>
                 <div className="wind">
+                    <p>Швидкість вітру:</p>
                     {data.wind && (
                         <p className="bold">
                             {`${data.wind.speed.toFixed(1)} `}
                             м/с
                         </p>
                     )}
-                    <p>Швидкість вітру</p>
+
                 </div>
 
             </div>
