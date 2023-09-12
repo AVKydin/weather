@@ -1,4 +1,5 @@
 import {useState} from "react";
+import axios from "axios";
 
 
 function App() {
@@ -11,11 +12,18 @@ function App() {
 
   const searchWeather = (e)=>{
       if(e.key === "Enter") {
-          fetch(url)
-              .then(res=>res.json())
-              .then(res=>{
-              setData(res)})
+          axios.get(url).then(res=>{
+              setData(res.data)
+          }).catch((error)=> {
+                  setData(error.response.data);
+          })
           setCity('')
+
+          // fetch(url)
+          //     .then(res=>res.json())
+          //     .then(res=>{
+          //     setData(res)})
+          // setCity('')
       }
   }
 
@@ -28,7 +36,15 @@ function App() {
         placeholder="Enter location"
         onKeyDown={searchWeather}/>
       </div>
+
         <div className="container">
+            <div className="err">
+                {(data.cod === '404') && (
+                    <h1>
+                        {`Таке місто відсутнє`}
+                    </h1>
+                )}
+            </div>
             <div className="header">
                 <div className="city">
                     <p>{data.name}</p>
