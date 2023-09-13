@@ -42,3 +42,12 @@
     background: rgba(255,255,255,0.5);
 
 }
+
+.modal-content button{
+    width: 100%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background: linear-gradient(0deg, rgba(253,247,45,1) 50%, rgba(45,98,253,1) 50%);
+    cursor: pointer;
+}

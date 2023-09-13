@@ -12,7 +12,6 @@ export default function ModalWnd({call, closeModalWnd}){
         }
     }
 
-
     const isHyillo = ()=>{
         if(hyilo.toLowerCase().trim() === 'хуйло'){
             closeModalWnd();
