@@ -25,7 +25,7 @@ function App() {
   }
 
   function closeModalWnd(){
-      setModalState(!modalState)
+      setModalState(false)
   }
 
   return (
