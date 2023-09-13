@@ -9,7 +9,7 @@
 
 .modal-content{
     max-width: 450px;
-    width: 100%;
+    width: 90%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -29,7 +29,12 @@
     padding: 0.5rem;
 }
 
+.modal span{
+    text-align: center;
+}
+
 .modal input{
+    width: 35%;
     padding: .5rem 1rem;
     font-size: 1.2rem;
     border-radius: 15px;
