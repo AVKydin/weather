@@ -12,9 +12,13 @@ export default function ModalWnd({call, closeModalWnd}){
         }
     }
 
-    // const isHyillo = (e)=>{
-    //
-    // }
+
+    const isHyillo = ()=>{
+        if(hyilo.toLowerCase().trim() === 'хуйло'){
+            closeModalWnd();
+            setHyilo('')
+        }
+    }
 
     if(!call){
         return null;
@@ -31,7 +35,7 @@ export default function ModalWnd({call, closeModalWnd}){
                 placeholder="хто?"/>
 
             , ла-ла-ла-ла-ла!</span>
-                {/*<button onClick={()=>{isHyillo()}}>OK</button>*/}
+                <button onClick={()=>{isHyillo()}}>OK</button>
             </div>
         </div>
     )
