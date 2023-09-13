@@ -1,12 +1,20 @@
 import "./ModalWnd.css";
+import {useState} from "react";
 
 export default function ModalWnd({call, closeModalWnd}){
 
-    const isHyilo = (e)=>{
-        if(e.key === "Enter" && e.target.value.toLowerCase().trim() === 'хуйло'){
-            closeModalWnd(false)
+    const [hyilo, setHyilo] =useState('')
+
+    const isHyilo = ()=>{
+        if(hyilo.toLowerCase().trim() === 'хуйло'){
+            closeModalWnd();
+            setHyilo('')
         }
     }
+
+    // const isHyillo = (e)=>{
+    //
+    // }
 
     if(!call){
         return null;
@@ -16,10 +24,14 @@ export default function ModalWnd({call, closeModalWnd}){
             <div className="modal-content">
                 <h3>Вставте пропущене слово і Ви зможете скористатися сервісом</h3>
                 <span>путін - <input type="text"
+                                     value={hyilo}
+                                     onChange={(e)=>setHyilo(e.target.value)}
                                      pattern = "[А-Яа-я]"
-                                     onKeyDown={isHyilo}/>
-            , ла-ла-ла-ла-ла!</span>
+                                     onKeyDown={isHyilo}
+                placeholder="хто?"/>
 
+            , ла-ла-ла-ла-ла!</span>
+                {/*<button onClick={()=>{isHyillo()}}>OK</button>*/}
             </div>
         </div>
     )
