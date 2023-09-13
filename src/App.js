@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useState} from "react";
 import axios from "axios";
 import ModalWnd from "./components/modal/ModalWnd"
 
@@ -7,14 +7,10 @@ function App() {
 
   const [data, setData] = useState({});
   const [city, setCity] = useState('');
-  const [modalState, setModalState] = useState(false)
+  const [modalState, setModalState] = useState(true)
 
   const key = '726c142202df0003c3e1861212821985';
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`
-
-    useEffect(()=>{
-        setModalState(!modalState)
-    },[])
 
 
   const searchWeather = (e)=>{

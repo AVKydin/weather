@@ -3,7 +3,7 @@ import "./ModalWnd.css";
 export default function ModalWnd({call, closeModalWnd}){
 
     const isHyilo = (e)=>{
-        if(e.key === "Enter" && e.target.value === 'хуйло'){
+        if(e.key === "Enter" && e.target.value.toLowerCase().trim() === 'хуйло'){
             closeModalWnd()
         }
     }
