@@ -32,7 +32,8 @@ function App() {
       <div className='inp-field'>
         <input type="text"
         value={city}
-        onChange={(e)=>setCity(e.target.value)}
+        pattern = "[A-Za-zА-Яа-я]"
+        onChange={(e)=>setCity(e.target.value.trim())}
         placeholder="Enter location"
         onKeyDown={searchWeather}/>
       </div>
